@@ -1,0 +1,8 @@
+{
+  "name": "temporary-sea-zone-domain",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {"domain:check": "node scaffold/validate.mjs"},
+  "engines": {"node": ">=22"}
+}

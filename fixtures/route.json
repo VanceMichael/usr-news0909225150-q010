@@ -1,0 +1,1 @@
+{"decision_id": "D-01", "idempotency_key": "route-check-0001", "departure_at": "2026-09-06T05:30:00+08:00", "speed_knots": 12, "route": [[118.90, 39.10], [119.20, 39.10], [119.50, 39.10]]}
