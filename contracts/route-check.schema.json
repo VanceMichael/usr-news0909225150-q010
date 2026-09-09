@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "航线禁入判定请求",
+  "type": "object",
+  "required": ["decision_id", "idempotency_key", "departure_at", "speed_knots", "route"],
+  "properties": {
+    "decision_id": {"type": "string"},
+    "idempotency_key": {"type": "string"},
+    "departure_at": {"type": "string", "format": "date-time"},
+    "speed_knots": {"type": "number", "exclusiveMinimum": 0},
+    "route": {"type": "array", "minItems": 2}
+  }
+}
