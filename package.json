@@ -3,6 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "scripts": {"domain:check": "node scaffold/validate.mjs"},
-  "engines": {"node": ">=22"}
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "domain:check": "node scaffold/validate.mjs",
+    "build": "tsc -p tsconfig.json && node -e \"require('node:fs').cpSync('src/migrations','dist/migrations',{recursive:true})\"",
+    "start": "node dist/server.js",
+    "dev": "tsx src/server.ts",
+    "test": "tsx --test test/integration.test.ts",
+    "test:acceptance": "tsx test/acceptance.ts",
+    "seed": "tsx src/scripts/seed.ts"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/pg": "^8.11.10",
+    "embedded-postgres": "^17.5.0-beta.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
 }
