@@ -3,6 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "scripts": {"domain:check": "node scaffold/validate.mjs"},
-  "engines": {"node": ">=22"}
+  "scripts": {
+    "domain:check": "node scaffold/validate.mjs",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/src/server.js",
+    "test:unit": "npm run build && node --test dist/test/geometry.test.js",
+    "test:integration": "node --test dist/test/integration.test.js",
+    "acceptance": "sh scripts/acceptance.sh",
+    "acceptance:local": "npm run build && node scripts/acceptance-local.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/pg": "^8.11.10",
+    "embedded-postgres": "^18.4.0-beta.17",
+    "typescript": "^5.6.3"
+  }
 }
